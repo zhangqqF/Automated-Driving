@@ -41,5 +41,8 @@ This video series is from YouTube.
 4. free driving mode的搭建是不是有问题？
 
 ## Part6: Vehicle Behavioral Planner Design Using Stateflow
+1. 添加stateflow来控制driving mode
+
+## Part 7: Creating your own 2D Traffic Visualization in Simulink
 
 
