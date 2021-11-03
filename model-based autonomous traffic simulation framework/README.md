@@ -35,4 +35,11 @@ This video series is from YouTube.
 
 
 ## Part5: Implementing different Driving Modes in Simulink
+1. 封装ACC车辆控制模式，其控制ego car
+2. 新建Free driving mode
+3. 切换条件<=30
+4. free driving mode的搭建是不是有问题？
+
+## Part6: Vehicle Behavioral Planner Design Using Stateflow
+
 
