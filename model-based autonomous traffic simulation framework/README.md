@@ -22,3 +22,17 @@ This video series is from YouTube.
 
 3. 添加一个VR Sink，导入PlatoonWorld.WRL文件，因为这里只计算longitudinal motion，因此只勾选translation（car red and car blue）。
 
+    VR Signal Expander: 3, \[3]
+    
+    
+## Part4: Implementing a Simple Vehicle Lateral Motion in Simulink
+1. 在ego vehicle子系统中搭建Lateral Motion。
+2. VR Sink的car blue（ego car）勾选rotation，并通过一个bus creator来连接到ego car，设置4个信号，依次为x、y、z、r，这里是绕y旋转，所以y输入的信号为1.
+3. 添加unit delay使其smooth。
+4. 将longitudinal和lateral连起来
+5. ego car的translation接口通过，第一个接口是侧向，第二个为0，第三个是纵向
+6. 将ACC控制器的Sample time改小可以使动画速度变慢
+
+
+## Part5: Implementing different Driving Modes in Simulink
+
