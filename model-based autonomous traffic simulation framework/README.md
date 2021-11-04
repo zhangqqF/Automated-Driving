@@ -44,5 +44,14 @@ This video series is from YouTube.
 1. 添加stateflow来控制driving mode
 
 ## Part 7: Creating your own 2D Traffic Visualization in Simulink
+Create a subsystem named 2D animatiom, which has three input ports of longitudinal position, lateral position and steering angle. add a matrix concatenete and a matlab function.
+
+matrix concatenate: 3, vector
+
+comment out 3D animation
+
+block parameters for 2D animation, then set the sample time to 0.1, so the plot will be slower.
+
+How can use the variables of the matlab function in command window.
 
 
