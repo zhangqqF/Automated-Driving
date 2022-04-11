@@ -11,6 +11,19 @@ This video series is from YouTube.
 [GitHub link of the project, models and files](https://github.com/MustafaSaraoglu/AutonomousVehicleModeling),
 [More information on our award-winning framework](https://mobatsim.com/)
 
+Access the example of [adaptive-cruise-control-using-model-predictive-controller](https://www.mathworks.com/help/mpc/ug/adaptive-cruise-control-using-model-predictive-controller.html) to find the dynamics model between acceleration and velocity:
+
+**G = 1 / s(0.5s + 1)**
+
+```mermaid
+flowchart LR
+LRA --> B[Transfer Fcn<br/>ggg]
+B[Transfer Fcn<br/>ggg] --> C{66}
+```
+
+- **Transfer Fcn**
+    - *denominator Coefficient*: [0.5 1 0]
+
 
 ## Part2: 
 ## Part3: Using 3D annotation block for vehicle simulation in simulink
