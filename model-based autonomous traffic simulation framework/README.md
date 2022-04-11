@@ -8,6 +8,10 @@
 This video series is from YouTube.
 
 ## Part1: 
+[GitHub link of the project, models and files](https://github.com/MustafaSaraoglu/AutonomousVehicleModeling),
+[More information on our award-winning framework](https://mobatsim.com/)
+
+
 ## Part2: 
 ## Part3: Using 3D annotation block for vehicle simulation in simulink
 1. 修改Adaptive Cruise Control System的以下参数：
