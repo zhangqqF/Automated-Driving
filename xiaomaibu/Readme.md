@@ -11,10 +11,14 @@
 ### Part 2: 搭建整车动力学模型用于底盘控制开发及整车性能评估
 >楚骏楠&emsp;MathWorks中国
 
-
-
   ![image](https://user-images.githubusercontent.com/48160597/162764920-a7d72f55-d1e1-47a2-88ca-6f86e7eb0d22.png)
 
+🌷 Vehicle Body 3DOF Dual Track
+- 三自由度车辆模型（1235)
+
+| Name | DOF | Description |
+| -- | -- | -- |
+| 1 | Surge | 纵向 |
 
 
 
