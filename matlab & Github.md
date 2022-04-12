@@ -14,3 +14,13 @@
 
 
 在REC因为Git路径无法添加到环境变量，因此无法完成Push。
+
+Push之前要先Pull，以免冲突
+
+
+## 删除本地文件
+
+- 在matlab中选中该文件，source control -> Delete from Git and disk
+- 在matlab中选中该文件，source control -> View and commit changes
+- push
+- finish
