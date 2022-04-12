@@ -15,7 +15,7 @@ Access the example of [adaptive-cruise-control-using-model-predictive-controller
 
 **G = 1 / s(0.5s + 1)**
 
- **Transfer Fcn**
+ 🌴 **Transfer Fcn**
 - *denominator Coefficient*: [0.5 1 0]
 
 
