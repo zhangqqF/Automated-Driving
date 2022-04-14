@@ -11,7 +11,7 @@
 ### Part 2: 搭建整车动力学模型用于底盘控制开发及整车性能评估
 >楚骏楠&emsp;MathWorks中国
 
-#### Vehicle_3DOF_Basix
+#### [Vehicle_3DOF_Basix](Vehicle_3DOF_Basix.slx)
 
   ![image](https://user-images.githubusercontent.com/48160597/162764920-a7d72f55-d1e1-47a2-88ca-6f86e7eb0d22.png)
 
@@ -28,7 +28,8 @@ Simulink中的车辆自由度名称：
   | 6 | Yaw | 横摆 |
   | 5 | Pitch | 俯仰 |
   
-  
+
+#### [Vehicle_3DOF_Basix_add_plot](Vehicle_3DOF_Basix_add_plot.slx)
   
 将以下部分合并为子系统3D_Visualization:
 
@@ -50,7 +51,14 @@ Simulink中的车辆自由度名称：
 
 Enter the matlab command *openExample('vdynblks/VehicleLateralAccelerationAtDifferentSpeedsExample')* to open the CRReferenceApplication project （the command would be copied from the example [Vehicle Lateral Acceleration at Different Speeds](https://www.mathworks.com/help/vdynblks/ug/vehicle-lateral-dynamics-at-different-speeds.html?searchHighlight=CRReferenceApplication&s_tid=srchtitle_CRReferenceApplication_1)).
 
+#### [Vehicle_3DOF_Basix_demon](Vehicle_3DOF_Basix_demon.slx)
 
+模拟停车场
+
+
+  - 修改车辆初始角度位置：Vehicle Body 3DOF Dual Track，yaw -> Initial yaw angle 1.75 *(≈90°) from 0*.
+  - 修改车速（xdotin）为0.5 *from 10*。
+  - 修改方向盘灵敏度：Kinematic Steering -> General -> Steering Range: 15 *from 1.25\*pi*
 
 
 
