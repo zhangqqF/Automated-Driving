@@ -11,6 +11,9 @@
 ### Part 2: 搭建整车动力学模型用于底盘控制开发及整车性能评估
 >楚骏楠&emsp;MathWorks中国
 
+![image](https://user-images.githubusercontent.com/48160597/163537240-74689d09-ee86-41af-ad3c-3e98009d9c77.png)
+
+
 #### [Vehicle_3DOF_Basix](Vehicle_3DOF_Basix.slx)
 
   ![image](https://user-images.githubusercontent.com/48160597/162764920-a7d72f55-d1e1-47a2-88ca-6f86e7eb0d22.png)
@@ -60,10 +63,23 @@ Enter the matlab command *openExample('vdynblks/VehicleLateralAccelerationAtDiff
   - 修改方向盘灵敏度：Kinematic Steering -> General -> Steering Range: 15 *from 1.25\*pi*
   - 修改场景：Simulation 3D Scene Configuration -> Scene name: Large parking lot
 
-####
-
-横向动力学特性
+#### 横向动力学特性
 
 ![image](https://user-images.githubusercontent.com/48160597/163531898-f84e40cc-e53c-4312-b751-ecd6e4ec4324.png)
+
+
+#### 6自由度车辆模型
+
+6自由度模型指的是车身的自由度（即完整的刚体自由度），而非车辆的自由度，车辆自由度还有轮胎的滚动。
+
+![image](https://user-images.githubusercontent.com/48160597/163537752-5116db10-37d0-4ad5-8770-7676014f49eb.png)
+
+![image](https://user-images.githubusercontent.com/48160597/163537802-cd9e4deb-0ed1-4a34-bd14-43092dc8a832.png)
+
+两种建模工具箱：
+
+![image](https://user-images.githubusercontent.com/48160597/163538297-e079cfac-647d-42a6-b748-7b13d67a4796.png)
+
+
 
 
