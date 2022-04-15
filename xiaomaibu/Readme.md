@@ -80,6 +80,7 @@ Enter the matlab command *openExample('vdynblks/VehicleLateralAccelerationAtDiff
 
 ![image](https://user-images.githubusercontent.com/48160597/163538297-e079cfac-647d-42a6-b748-7b13d67a4796.png)
 
+R2018b版本后，文件托管在GitHub，可从上面下载：
 [![](https://img.shields.io/static/v1?label=MathWorks&message=SimscapeVehicleTemplates&color=pink&logo=MathWorks)](https://www.mathworks.com/solutions/physical-modeling/simscape-vehicle-templates.html)
 [![](https://img.shields.io/static/v1?label=GitHub&message=SimscapeVehicleTemplates&color=green&logo=github)](https://github.com/mathworks/Simscape-Vehicle-Templates)
 
