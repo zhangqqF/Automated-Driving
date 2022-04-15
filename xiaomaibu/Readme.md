@@ -55,11 +55,15 @@ Enter the matlab command *openExample('vdynblks/VehicleLateralAccelerationAtDiff
 
 模拟停车场
 
-
   - 修改车辆初始角度位置：Vehicle Body 3DOF Dual Track，yaw -> Initial yaw angle 1.75 *(≈90°) from 0*.
   - 修改车速：constant (connect to xdotin of the vehicle): 0.5 *from 10*。
   - 修改方向盘灵敏度：Kinematic Steering -> General -> Steering Range: 15 *from 1.25\*pi*
   - 修改场景：Simulation 3D Scene Configuration -> Scene name: Large parking lot
 
+####
+
+横向动力学特性
+
+![image](https://user-images.githubusercontent.com/48160597/163531898-f84e40cc-e53c-4312-b751-ecd6e4ec4324.png)
 
 
