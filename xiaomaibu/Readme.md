@@ -76,7 +76,7 @@ Enter the matlab command *openExample('vdynblks/VehicleLateralAccelerationAtDiff
 
 ![image](https://user-images.githubusercontent.com/48160597/163537802-cd9e4deb-0ed1-4a34-bd14-43092dc8a832.png)
 
-两种建模工具箱：
+两种建模工具箱：Vehicle Dynamic Blockset和Simscape Muiltibody
 
 ![image](https://user-images.githubusercontent.com/48160597/163538297-e079cfac-647d-42a6-b748-7b13d67a4796.png)
 
