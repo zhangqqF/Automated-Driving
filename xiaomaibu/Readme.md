@@ -11,7 +11,10 @@
 ### Part 2: 搭建整车动力学模型用于底盘控制开发及整车性能评估
 >楚骏楠&emsp;MathWorks中国
 
-#### Vehicle_3DOF_Basix
+![image](https://user-images.githubusercontent.com/48160597/163537240-74689d09-ee86-41af-ad3c-3e98009d9c77.png)
+
+
+#### [Vehicle_3DOF_Basix](Vehicle_3DOF_Basix.slx)
 
   ![image](https://user-images.githubusercontent.com/48160597/162764920-a7d72f55-d1e1-47a2-88ca-6f86e7eb0d22.png)
 
@@ -28,7 +31,8 @@ Simulink中的车辆自由度名称：
   | 6 | Yaw | 横摆 |
   | 5 | Pitch | 俯仰 |
   
-  
+
+#### [Vehicle_3DOF_Basix_add_plot](Vehicle_3DOF_Basix_add_plot.slx)
   
 将以下部分合并为子系统3D_Visualization:
 
@@ -50,7 +54,34 @@ Simulink中的车辆自由度名称：
 
 Enter the matlab command *openExample('vdynblks/VehicleLateralAccelerationAtDifferentSpeedsExample')* to open the CRReferenceApplication project （the command would be copied from the example [Vehicle Lateral Acceleration at Different Speeds](https://www.mathworks.com/help/vdynblks/ug/vehicle-lateral-dynamics-at-different-speeds.html?searchHighlight=CRReferenceApplication&s_tid=srchtitle_CRReferenceApplication_1)).
 
+#### [Vehicle_3DOF_Basix_demon](Vehicle_3DOF_Basix_demon.slx)
+
+模拟停车场
+
+  - 修改车辆初始角度位置：Vehicle Body 3DOF Dual Track，yaw -> Initial yaw angle 1.75 *(≈90°) from 0*.
+  - 修改车速：constant (connect to xdotin of the vehicle): 0.5 *from 10*。
+  - 修改方向盘灵敏度：Kinematic Steering -> General -> Steering Range: 15 *from 1.25\*pi*
+  - 修改场景：Simulation 3D Scene Configuration -> Scene name: Large parking lot
+
+#### 横向动力学特性
+
+![image](https://user-images.githubusercontent.com/48160597/163531898-f84e40cc-e53c-4312-b751-ecd6e4ec4324.png)
 
 
+#### 6自由度车辆模型
+
+6自由度模型指的是车身的自由度（即完整的刚体自由度），而非车辆的自由度，车辆自由度还有轮胎的滚动。
+
+![image](https://user-images.githubusercontent.com/48160597/163537752-5116db10-37d0-4ad5-8770-7676014f49eb.png)
+
+![image](https://user-images.githubusercontent.com/48160597/163537802-cd9e4deb-0ed1-4a34-bd14-43092dc8a832.png)
+
+两种建模工具箱：Vehicle Dynamic Blockset和Simscape Muiltibody
+
+![image](https://user-images.githubusercontent.com/48160597/163538297-e079cfac-647d-42a6-b748-7b13d67a4796.png)
+
+R2018b版本后，文件托管在GitHub，可从上面下载：
+[![](https://img.shields.io/static/v1?label=MathWorks&message=SimscapeVehicleTemplates&color=pink&logo=MathWorks)](https://www.mathworks.com/solutions/physical-modeling/simscape-vehicle-templates.html)
+[![](https://img.shields.io/static/v1?label=GitHub&message=SimscapeVehicleTemplates&color=green&logo=github)](https://github.com/mathworks/Simscape-Vehicle-Templates)
 
 
