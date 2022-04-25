@@ -9,15 +9,35 @@
 [![YouTube](https://img.shields.io/youtube/channel/views/UCVP9SDdAH_TcXCfGsGFQ09Q?style=social)](https://www.youtube.com/c/MOBATSim)
 [![](https://img.shields.io/badge/MOBATSim-lirhtgreen.svg)](https://mobatsim.com/)
 
-## Part1: 
+## Part1: Developing a Vehicle Model in Simulink from Scratch
 
 Access the example of [adaptive-cruise-control-using-model-predictive-controller](https://www.mathworks.com/help/mpc/ug/adaptive-cruise-control-using-model-predictive-controller.html) to find the dynamics model between acceleration and velocity:
 
-$$G=\frac{1}{s+1}$$
+![image](https://user-images.githubusercontent.com/48160597/165027467-385d93de-99ed-4ea5-92e6-57f1230f1803.png)
+ 
+### Transfer Fcn
 
- 🌴 **Transfer Fcn**
-- *denominator Coefficient*: [0.5 1 0]
+ *denominator Coefficient*: [0.5 1 0]
+ 
+ ![image](https://user-images.githubusercontent.com/48160597/165029299-5ac3a2cf-85e2-4a24-a891-1afae9b7e3ed.png)
+ 
+ ![image](https://user-images.githubusercontent.com/48160597/165029483-6bea0f9d-32e9-4b4d-8ea9-4bba6fc0bcc4.png)
 
+### Vehicle Model
+
+![image](https://user-images.githubusercontent.com/48160597/165038961-44529c32-f59e-4916-9cff-992cde3986b4.png)
+
+Transfer Func降一个次幂，其后增加一个积分器来弥补，积分器的Initial Condiction Source设置为Extra，即可增加Initial Speed的输入口。
+
+Transfer Func前面的saturation限制变速大小[-3, 2]，Speed后面的saturation则是使速度不能为负[0, inf]。
+
+目标速度减去当前速度......不太清楚这之间的关系。
+
+![image](https://user-images.githubusercontent.com/48160597/165040266-833d654a-98e1-4fd7-a58b-992539b3bab7.png)
+
+Mask Edit（ctrl+m）是当前路径的工作路径，不是当前文件存放路径。
+
+[Part1_Developing_a_Vehicle_Model_in_Simulink_from_Scratch.slx](Part1_Developing_a_Vehicle_Model_in_Simulink_from_Scratch.slx)
 
 ## Part2: 
 ## Part3: Using 3D annotation block for vehicle simulation in simulink
