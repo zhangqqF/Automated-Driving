@@ -22,6 +22,10 @@ Access the example of [adaptive-cruise-control-using-model-predictive-controller
  ![image](https://user-images.githubusercontent.com/48160597/165029299-5ac3a2cf-85e2-4a24-a891-1afae9b7e3ed.png)
  
  ![image](https://user-images.githubusercontent.com/48160597/165029483-6bea0f9d-32e9-4b4d-8ea9-4bba6fc0bcc4.png)
+ 
+ 
+ 
+ 
 
 ### Vehicle Model
 
@@ -42,6 +46,9 @@ Mask Edit（ctrl+m）是当前路径的工作路径，不是当前文件存放�
 
 Initial Position: 100  
 Initial Speed: 20
+
+
+
 
 ## Part2: Using Adaptive Cruise Control Block in Simulink
 
@@ -66,7 +73,14 @@ Sum使减号在上面：-+|
 
 Prediction horizon (steps)影响输出曲线和仿真速度。
 
+![image](https://user-images.githubusercontent.com/48160597/165055431-51408c67-5450-4aea-8896-1d7799285539.png)
+
 [Part2_Using_Adaptive_Cruise_Control_Block_in_Simulink.slx](Part2_Using_Adaptive_Cruise_Control_Block_in_Simulink.slx)
+
+
+
+
+
 
 ## Part3: Using 3D annotation block for vehicle simulation in simulink
 1. 修改Adaptive Cruise Control System的以下参数：
@@ -84,6 +98,11 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
     VR Signal Expander: 3, \[3]
     
     
+    
+    
+    
+    
+    
 ## Part4: Implementing a Simple Vehicle Lateral Motion in Simulink
 1. 在ego vehicle子系统中搭建Lateral Motion。
 2. VR Sink的car blue（ego car）勾选rotation，并通过一个bus creator来连接到ego car，设置4个信号，依次为x、y、z、r，这里是绕y旋转，所以y输入的信号为1.
@@ -93,14 +112,30 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 6. 将ACC控制器的Sample time改小可以使动画速度变慢
 
 
+
+
+
+
 ## Part5: Implementing different Driving Modes in Simulink
 1. 封装ACC车辆控制模式，其控制ego car
 2. 新建Free driving mode
 3. 切换条件<=30
 4. free driving mode的搭建是不是有问题？
 
+
+
+
+
+
+
 ## Part6: Vehicle Behavioral Planner Design Using Stateflow
 1. 添加stateflow来控制driving mode
+
+
+
+
+
+
 
 ## Part 7: Creating your own 2D Traffic Visualization in Simulink
 Create a subsystem named 2D animatiom, which has three input ports of longitudinal position, lateral position and steering angle. add a matrix concatenete and a matlab function.
