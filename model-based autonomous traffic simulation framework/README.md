@@ -37,9 +37,35 @@ Transfer Func前面的saturation限制变速大小[-3, 2]，Speed后面的satura
 
 Mask Edit（ctrl+m）是当前路径的工作路径，不是当前文件存放路径。
 
+
 [Part1_Developing_a_Vehicle_Model_in_Simulink_from_Scratch.slx](Part1_Developing_a_Vehicle_Model_in_Simulink_from_Scratch.slx)
 
-## Part2: 
+Initial Position: 100  
+Initial Speed: 20
+
+## Part2: Using Adaptive Cruise Control Block in Simulink
+
+- 复制Vehicle Model 1为Vehicle Model 2，在Vehicle Model 2中增加Adaptive Cruise Control System
+
+![image](https://user-images.githubusercontent.com/48160597/165051796-2a6f711f-ddbe-4f2f-8fc5-2daf2b9fedc1.png)
+
+对比Part 2中的模型。
+
+修改ACC中的参数：
+- Initial condition for longitudinal velocity (m/s)：30
+- Prediction horizon (steps)：300
+- Controller Behavior：0.8
+
+![image](https://user-images.githubusercontent.com/48160597/165052498-7908f468-0beb-4de2-baef-0b92b581071e.png)
+
+将Vehicle Model 2的Initial Position和Initial Speed分别改为0和30，Vehicle 1仍保持100，20，但Reference Speed改为20 from 30.
+
+Sum使减号在上面：-+|
+
+运行100s，可看到缓慢进程。
+
+[Part2_Using_Adaptive_Cruise_Control_Block_in_Simulink.slx](Part2_Using_Adaptive_Cruise_Control_Block_in_Simulink.slx)
+
 ## Part3: Using 3D annotation block for vehicle simulation in simulink
 1. 修改Adaptive Cruise Control System的以下参数：
     - Controller Behavior: form 0.5 to 0.59
