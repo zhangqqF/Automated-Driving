@@ -13,7 +13,7 @@
 
 Access the example of [adaptive-cruise-control-using-model-predictive-controller](https://www.mathworks.com/help/mpc/ug/adaptive-cruise-control-using-model-predictive-controller.html) to find the dynamics model between acceleration and velocity:
 
-**G = 1 / s(0.5s + 1)**
+$$dd$$
 
  🌴 **Transfer Fcn**
 - *denominator Coefficient*: [0.5 1 0]
