@@ -53,8 +53,8 @@ Initial Speed: 20
 
 修改ACC中的参数：
 - Initial condition for longitudinal velocity (m/s)：30
-- Prediction horizon (steps)：300
-- Controller Behavior：0.8
+- Prediction horizon (steps)：300 from 30
+- Controller Behavior：0.8 from 0.5
 
 ![image](https://user-images.githubusercontent.com/48160597/165052498-7908f468-0beb-4de2-baef-0b92b581071e.png)
 
@@ -63,6 +63,8 @@ Initial Speed: 20
 Sum使减号在上面：-+|
 
 运行100s，可看到缓慢进程。
+
+Prediction horizon (steps)影响输出曲线和仿真速度。
 
 [Part2_Using_Adaptive_Cruise_Control_Block_in_Simulink.slx](Part2_Using_Adaptive_Cruise_Control_Block_in_Simulink.slx)
 
