@@ -84,20 +84,28 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 
 ## Part3: Using 3D annotation block for vehicle simulation in simulink
 1. 修改Adaptive Cruise Control System的以下参数：
-    - Controller Behavior: form 0.5 to 0.59
-    - Prediction horizon (steps): from 30 to 200
-    - Sample time: from 0.1 to 0.5
-    - Default spacing (m): from 10 to 5
+    - Controller Behavior: 0.59 from 0.8
+    - Prediction horizon (steps): 200 from 300
+    - Sample time: 0.5 from 0.1
+    - Default spacing (m): 5 from 10
 
-    运行，模型收敛更快。
+    运行，模型收敛变快，且曲线有所改变。
 
-2. 将leader vehicle的initial speed改为0，运行，发现车距有负值（即ego vehicle跑到了前面），为避免这种情况发生，增加一个compare to constant->stop.
+2. 将vehicle 1的initial position和initial speed改为10和1，vehicle 2仍为0和30，运行，发现车距有负值（即vehicle 2跑到了前面），为避免这种情况发生，增加一个compare to constant->stop.
 
 3. 添加一个VR Sink，导入PlatoonWorld.WRL文件，因为这里只计算longitudinal motion，因此只勾选translation（car red and car blue）。
+  - 将两个vehicle的position输出直接连到VR sink会报错，因为VR sink需要三维（三个方向）输入，而这里的position只是纵向位移，因此，需要接一个数据转换VR signal Expander。
+ 
+  - VR signal expander：
+    - Output width：3 from 4
+    - Indies：[3] from [2 4]
+  
+4. 修改vehicle 1的initial position和initial speed为30和15，运行查看动画。
+5. 点击照相机左边的图标，可进入VR sink编辑界面，可调整sample time为0.05，视图CAM_CARLotus运行查看
+    
+![image](https://user-images.githubusercontent.com/48160597/165201234-059b7f4f-4034-4ace-a02f-e221375828e1.png)
 
-    VR Signal Expander: 3, \[3]
-    
-    
+[Part3_Using_3D_Animation_Block.slx](Part3_Using_3D_Animation_Block.slx)
     
     
     
