@@ -144,10 +144,18 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 
 
 ## Part5: Implementing different Driving Modes in Simulink
-1. 封装ACC车辆控制模式，其控制ego car
+1. 封装ACC车辆控制模式为Following Driving Mode
 2. 新建Free driving mode
-3. 切换条件<=30
-4. free driving mode的搭建是不是有问题？
+
+ ![image](https://user-images.githubusercontent.com/48160597/165231846-7fdca675-fc60-4649-b888-4a4585b4965c.png)
+
+不理解之前是减去速度，这里为什么直接用速度减加速度？
+
+3. 增加切换条件>=30，满足条件，则执行Free Mode
+
+ ![image](https://user-images.githubusercontent.com/48160597/165233265-103b0171-43e8-4aba-9691-6f5a0c4ca5d8.png)
+
+[Part5_Impleting_Different_Driving_Modes.slx](Part5_Impleting_Different_Driving_Modes.slx)
 
 
 
@@ -156,7 +164,17 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 
 
 ## Part6: Vehicle Behavioral Planner Design Using Stateflow
-1. 添加stateflow来控制driving mode
+1. 用stateflow来控制driving mode，添加chat：
+
+ [relativeDistance <= 50]
+ 
+ 点击菜单栏MODELING->Sympols Pane，将relativeDistance和drivingMode分别设置为input和output。
+ 
+2. 用stateflow替换compare to constant，multi switch替换switch，并增加紧急制动模式，紧急制动下加速度为-5：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165238718-182132a7-50fa-4645-97c3-f2636e198678.png)
+
+[Part6_Vehicle_Behavioral_Planner_using_Stateflow.slx](Part6_Vehicle_Behavioral_Planner_using_Stateflow.slx)
 
 
 
@@ -165,14 +183,29 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 
 
 ## Part 7: Creating your own 2D Traffic Visualization in Simulink
-Create a subsystem named 2D animatiom, which has three input ports of longitudinal position, lateral position and steering angle. add a matrix concatenete and a matlab function.
+1. 创建子系统2D Visualizatrion：
+ 
+ ![image](https://user-images.githubusercontent.com/48160597/165242290-d36a11a5-a63e-44f9-a153-11ca227f3752.png)
+ 
+  - 双击Matrix Concatenate修改其mode为vector
 
-matrix concatenate: 3, vector
+  - 双击matlab func编辑如下：
+  ```matlab
+  function plotVehicle(v1)
 
-comment out 3D animation
+  x1 = v1(1);
+  y1 = v1(2);
+  yaw1 = v1(3);
 
-block parameters for 2D animation, then set the sample time to 0.1, so the plot will be slower.
+  plot(x1,y1,'o');
+  ```
+2. 连接2D visualization，command out 3D visualization，运行
 
-How can use the variables of the matlab function in command window.
+  ![image](https://user-images.githubusercontent.com/48160597/165242997-36f14cb7-04cc-4d7a-a981-c4e19f4288f6.png)
+
+3. 用矩形代表车辆，矩形的构造公式：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165266117-4448ef80-77df-4b3b-bee4-1d3047ad0e2a.png)
+
 
 
