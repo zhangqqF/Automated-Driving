@@ -112,12 +112,31 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
     
     
 ## Part4: Implementing a Simple Vehicle Lateral Motion in Simulink
-1. 在ego vehicle子系统中搭建Lateral Motion。
-2. VR Sink的car blue（ego car）勾选rotation，并通过一个bus creator来连接到ego car，设置4个信号，依次为x、y、z、r，这里是绕y旋转，所以y输入的信号为1.
-3. 添加unit delay使其smooth。
-4. 将longitudinal和lateral连起来
-5. ego car的translation接口通过，第一个接口是侧向，第二个为0，第三个是纵向
-6. 将ACC控制器的Sample time改小可以使动画速度变慢
+1. 在vehicle 2中增加侧向运动：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165205588-e88ee5cb-30b6-47b4-90dc-ac7b53478c0b.png)
+
+2. 增加VR Sink的car blue（vehicle 2）的rotation，VR sink的rotation接收的是四个维度的数据（x、y、z、r），因此这里需要一个bus creator，因为是绕y旋转，所以y输入的信号为1，x和z为0：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165206035-fb8af540-b8f1-46bf-8a9a-c395b97ac99b.png)
+
+4. 添加unit delay使其smooth（为何）：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165206166-c9f90f07-0ff6-46b4-a72b-e414f4325d34.png)
+
+5. 将longitudinal motion和lateral motion结合起来：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165226877-d9531f03-c374-48f1-992e-6c32ce70bbd6.png)
+
+ z在VR sink中是longitudinal motion，x是lateral motion。
+ 
+6. 将vehicle 2连接到VR translation之间的expander改为bus creator。将转角改为pi/2，运行
+
+ ![image](https://user-images.githubusercontent.com/48160597/165227550-cd65a206-50ef-47c5-b2e7-4176a23ad330.png)
+
+[Part4_Implementing_a_Simple_Vehicle_Lateral_Motion.slx](Part4_Implementing_a_Simple_Vehicle_Lateral_Motion.slx)
+
+[只加转角的过程数据](Part4_Implementing_a_Simple_Vehicle_Lateral_Motion_1.slx)
 
 
 
