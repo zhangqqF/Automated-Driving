@@ -300,4 +300,28 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 [Part10_Dashboard_for_Lane_Changing.slx](Part10_Dashboard_for_Lane_Changing.slx)
 
 
-## Part 11: 
+
+
+
+
+
+## Part 11: Unreal Engine in Simulink Using 3D Scenes
+
+1. 在自动驾驶工具箱中可找到Simulation 3D Vehicle with Ground Following和Simulation 3D Scene Configuration，二者sample time均改为0.1，关掉2D visualization，运行
+2. 所用版本和视频中的版本，unreal engine中车辆在车道中的默认位置不一样，Simulation 3D Vehicle with Ground Following中的初始位置是连同车道一起改变，而不是改变车辆与车道之间的相对位置，车辆在车道中的位置通过车辆的yPos来改变。
+3. 2D visualization使仿真很卡，关掉后仿真就顺畅了
+4. 无论增加多少个Simulation 3D Vehicle with Ground Following，都会在Simulation 3D Scene Configuration中一起显示，Scene view只是聚焦哪个Simulation 3D Vehicle with Ground Following。
+5. 将stateflow和三辆车的初始位置、速度改成和视频一样：
+  - [40 20]
+  - [20 25]
+  - [0 20]
+ 
+  ![image](https://user-images.githubusercontent.com/48160597/165488335-667ae81d-03a2-4a8b-ba7a-464efe4a8339.png)
+
+[Part11_Unreal_Engine.slx](Part11_Unreal_Engine.slx)
+
+
+
+
+
+## Part 12: MATLAB-GitHub Integration
