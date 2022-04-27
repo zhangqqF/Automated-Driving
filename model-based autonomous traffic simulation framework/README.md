@@ -281,6 +281,10 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 
 5. 仿真速度快慢的调整
 
+[Part9_Lane_Changing.slx](Part9_Lane_Changing.slx)
+
+
+
 
 
 
@@ -293,4 +297,7 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
  ![image](https://user-images.githubusercontent.com/48160597/165470132-a8941693-ad66-4422-b63b-f4916c8686f4.png)
 
 
+[Part10_Dashboard_for_Lane_Changing.slx](Part10_Dashboard_for_Lane_Changing.slx)
 
+
+## Part 11: 
