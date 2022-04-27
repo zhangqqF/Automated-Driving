@@ -207,5 +207,90 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 
  ![image](https://user-images.githubusercontent.com/48160597/165266117-4448ef80-77df-4b3b-bee4-1d3047ad0e2a.png)
 
+4. 当matlab函数中形参增加时，block就会增加一个输入口
+5. plot函数，如果不hold on，则后面的plot会抹除之前的plot。这里直接在matlab func的mask edit（ctrl+m）设置initialization：
+  ```matlab
+  close all;
+  figure('units','normalized','outerposition',[0 0 1 1]);
+  % grid on
+  axis equal;
+  hold on
+```
+6. 为置车辆于下方车道内，需将两辆车的初始y向位置设置为-2.5（车道宽为5）
+7. 将车的长度考虑进collision的情况
+
+ ![image](https://user-images.githubusercontent.com/48160597/165420916-3c4728fd-096e-41a5-9cb8-48c6d7382916.png)
+
+改为
+
+ ![image](https://user-images.githubusercontent.com/48160597/165421193-0402f9d6-5e3c-49e3-93e3-c6b10b35614d.png)
+
+
+[Part7_Creating_2D_Traffic_Visualization.slx](Part7_Creating_2D_Traffic_Visualization.slx)
+
+
+
+
+
+
+
+## Part 8: Cruise Control Using PID for the Third Vehicle
+1. 复制vehicle 2为vehicle 3，然后将acc controller改为PID控制
+
+ reference distance = ego * headwayTime
+
+![image](https://user-images.githubusercontent.com/48160597/165431795-78764a18-6ed7-47f8-8251-3249e72ea21d.png)
+
+2. 加延迟的作用是什么？
+
+ ![image](https://user-images.githubusercontent.com/48160597/165432232-730a8136-14b0-4f56-bc32-2d3f1da1f726.png)
+
+3. 加上PID控制器：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165447186-a0d4a10f-4c44-4ab0-962e-86398c2139e5.png)
+
+- PID controller参数：
+  - P: 2
+  - I: 0.04
+  - D: 2.1
+  - Filter Coefficient: 230
+  - Limit: [2 -3]
+  - Anti-winup method: Damping
+
+4. 增加Vehicle 3和Vehicle 2 collision的判定，并与之前vehicle 2和vehicle 1的判断用OR连接起来。
+
+[Part8_Cruise_Control_Using_PID_for_the_Third_Vehicle.slx](Part8_Cruise_Control_Using_PID_for_the_Third_Vehicle.slx)
+
+[Part8_Cruise_Control_Using_PID_for_the_Third_Vehicle_withoutPID.slx](Part8_Cruise_Control_Using_PID_for_the_Third_Vehicle_withoutPID.slx)
+
+
+
+
+
+
+
+
+
+## Part 9: Lane-Changing Implementation
+1. 在speed积分器中增加limit，设置lower limit为0 from -inf，然后删掉积分器后面的saturation。
+2. vehicle 3的relative speed接地（termination）。
+3. 将vehicle 3的collision判定接地，0接代替它接OR，即不考虑vehicle 3的collision。再将stateflow接地，代之与1接multi switch，使vehicle 3始终处于free driving mode。
+4. 调整step来调节变道（搞不清楚step time等如何影响输出）
+
+  ![image](https://user-images.githubusercontent.com/48160597/165459317-74fa2c49-7416-409d-aaf3-96db7573a105.png)
+
+5. 仿真速度快慢的调整
+
+
+
+
+
+
+
+## Part 10: Dashboard for Lane-Changing
+构建dashboard，通过knock调整转角：
+
+ ![image](https://user-images.githubusercontent.com/48160597/165470132-a8941693-ad66-4422-b63b-f4916c8686f4.png)
+
 
 
