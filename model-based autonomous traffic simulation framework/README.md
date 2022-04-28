@@ -325,3 +325,17 @@ Prediction horizon (steps)影响输出曲线和仿真速度。
 
 
 ## Part 12: MATLAB-GitHub Integration
+
+
+
+
+
+
+
+## Part 13: Kinematic and Dynamic Bicycle Model Implement
+
+[Coordinate Systems in Vehicle Dynamics Blockset](https://www.mathworks.com/help/vdynblks/ug/coordinate-systems-in-vehicle-dynamics-blockset.html?s_tid=srchtitle_coordinate%2520system_4)
+
+[Coordinate Systems in Automated Driving Toolbox](https://www.mathworks.com/help/driving/ug/coordinate-systems.html?s_tid=srchtitle_coordinate%2520system_1)
+
+
