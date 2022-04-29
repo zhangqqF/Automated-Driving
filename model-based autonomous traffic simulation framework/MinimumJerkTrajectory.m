@@ -36,6 +36,8 @@ a5 = X(6);
 
 t = t_i:0.1:t_f;
 
+
+% Lateral
 latPos = 1*a0 + a1*t + a2*t.^2 + a3*t.^3 + a4*t.^4 + a5*t.^5;
 latSpeed = a1 + 2*a2*t + 3*a3*t.^2 + 4*a4*t.^3 + 5*a5*t.^4;
 latAcc = 2*a2 + 6*a3*t + 12*a4*t.^2 + 20*a5*t.^3;
