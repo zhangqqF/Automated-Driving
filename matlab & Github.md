@@ -18,6 +18,16 @@
 Push之前要先Pull，以免冲突
 
 
+代码操作：
+```
+!git status
+!git add .
+!git commit -m "up"
+!git pull
+!git push
+```
+
+
 ## 删除本地文件
 
 - 在matlab中选中该文件，source control -> Delete from Git and disk
